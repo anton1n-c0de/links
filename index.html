@@ -68,6 +68,8 @@
             font-size: 0.95rem;
             border: 1px solid #334155;
             transition: all 0.2s ease;
+            cursor: pointer;
+            width: 100%;
         }
 
         .link-btn:hover {
@@ -77,48 +79,76 @@
             color: #ffffff;
         }
 
-        .contact-section {
-            margin-top: 28px;
-            padding-top: 20px;
-            border-top: 1px solid #334155;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .contact-item {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
-        }
-
-        .contact-item:hover {
+        .contact-display {
+            display: none;
+            padding: 14px 20px;
+            background-color: #0f172a;
+            border: 1px solid #38bdf8;
+            border-radius: 12px;
             color: #38bdf8;
+            font-weight: 600;
+            text-decoration: none;
+            word-break: break-all;
+            transition: all 0.2s ease;
+        }
+
+        .contact-display:hover {
+            background-color: #1e293b;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Načítá profilové foto z tvořícího se GitHubu -->
+        <!-- Profilový obrázek z GitHubu -->
         <img class="profile-img" src="https://github.com/anton1n-c0de.png" alt="Antonín Havlátko">
         
         <h1>Antonín Havlátko</h1>
         <p class="subtitle">Osobní rozcestník</p>
 
-        <!-- Hlavní sociální sítě / odkazy -->
         <div class="links">
             <a href="https://github.com/anton1n-c0de" class="link-btn" target="_blank" rel="noopener">GitHub</a>
             <a href="https://instagram.com/tech_tonda" class="link-btn" target="_blank" rel="noopener">Instagram (@tech_tonda)</a>
-        </div>
+            
+            <!-- Tlačítko a odkaz pro e-mail -->
+            <button id="email-btn" class="link-btn" onclick="revealEmail()">✉️ Zobrazit e-mail</button>
+            <a id="email-link" class="contact-display" href="#"></a>
 
-        <!-- Přímé kontakty -->
-        <div class="contact-section">
-            <a href="tel:+420775336249" class="contact-item">📞 +420 775 336 249</a>
-            <a href="mailto:ahavlatko@protonmail.com" class="contact-item">✉️ ahavlatko@protonmail.com</a>
+            <!-- Tlačítko a odkaz pro telefon -->
+            <button id="phone-btn" class="link-btn" onclick="revealPhone()">📞 Zobrazit telefon</button>
+            <a id="phone-link" class="contact-display" href="#"></a>
         </div>
     </div>
+
+    <script>
+        function revealEmail() {
+            // Zakódovaný e-mail (ahavlatko@protonmail.com)
+            const encodedEmail = "YWhhdmxhdGtvQHByb3Rvbm1haWwuY29t";
+            const email = atob(encodedEmail);
+            
+            const btn = document.getElementById('email-btn');
+            const link = document.getElementById('email-link');
+            
+            link.href = "mailto:" + email;
+            link.textContent = email;
+            btn.style.display = 'none';
+            link.style.display = 'block';
+        }
+
+        function revealPhone() {
+            // Zakódované telefonní číslo (+420 775 336 249)
+            const encodedPhone = "KzQyMCA3NzUgMzM2IDI0OQ==";
+            const phone = atob(encodedPhone);
+            
+            const btn = document.getElementById('phone-btn');
+            const link = document.getElementById('phone-link');
+            
+            link.href = "tel:" + phone.replace(/\s+/g, '');
+            link.textContent = phone;
+            btn.style.display = 'none';
+            link.style.display = 'block';
+        }
+    </script>
 
 </body>
 </html>

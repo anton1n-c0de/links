@@ -107,34 +107,23 @@
         <p class="subtitle">Osobní rozcestník</p>
 
         <div class="links">
-            <a href="https://github.com/anton1n-c0de" class="link-btn" target="_blank" rel="noopener">GitHub</a>
-            <a href="https://instagram.com/tech_tonda" class="link-btn" target="_blank" rel="noopener">Instagram (@tech_tonda)</a>
-            
-            <!-- Tlačítko a odkaz pro e-mail -->
+            <!-- 1. Telefon -->
+            <button id="phone-btn" class="link-btn" onclick="revealPhone()">📞 Telefon</button>
+            <a id="phone-link" class="contact-display" href="#"></a>
+
+            <!-- 2. E-mail -->
             <button id="email-btn" class="link-btn" onclick="revealEmail()">✉️ E-mail</button>
             <a id="email-link" class="contact-display" href="#"></a>
 
-            <!-- Tlačítko a odkaz pro telefon -->
-            <button id="phone-btn" class="link-btn" onclick="revealPhone()">📞 Telefon</button>
-            <a id="phone-link" class="contact-display" href="#"></a>
+            <!-- 3. GitHub -->
+            <a href="https://github.com/anton1n-c0de" class="link-btn" target="_blank" rel="noopener">GitHub</a>
+
+            <!-- 4. Instagram -->
+            <a href="https://instagram.com/tech_tonda" class="link-btn" target="_blank" rel="noopener">Instagram (@tech_tonda)</a>
         </div>
     </div>
 
     <script>
-        function revealEmail() {
-            // Zakódovaný e-mail (ahavlatko@protonmail.com)
-            const encodedEmail = "YWhhdmxhdGtvQHByb3Rvbm1haWwuY29t";
-            const email = atob(encodedEmail);
-            
-            const btn = document.getElementById('email-btn');
-            const link = document.getElementById('email-link');
-            
-            link.href = "mailto:" + email;
-            link.textContent = email;
-            btn.style.display = 'none';
-            link.style.display = 'block';
-        }
-
         function revealPhone() {
             // Zakódované telefonní číslo (+420 775 336 249)
             const encodedPhone = "KzQyMCA3NzUgMzM2IDI0OQ==";
@@ -145,6 +134,20 @@
             
             link.href = "tel:" + phone.replace(/\s+/g, '');
             link.textContent = phone;
+            btn.style.display = 'none';
+            link.style.display = 'block';
+        }
+
+        function revealEmail() {
+            // Zakódovaný e-mail (ahavlatko@protonmail.com)
+            const encodedEmail = "YWhhdmxhdGtvQHByb3Rvbm1haWwuY29t";
+            const email = atob(encodedEmail);
+            
+            const btn = document.getElementById('email-btn');
+            const link = document.getElementById('email-link');
+            
+            link.href = "mailto:" + email;
+            link.textContent = email;
             btn.style.display = 'none';
             link.style.display = 'block';
         }

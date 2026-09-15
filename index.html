@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moje Odkazy</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            margin-bottom: 16px;
+            border: 2px solid #38bdf8;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-btn {
+            display: block;
+            padding: 14px 20px;
+            background-color: #1e293b;
+            color: #f8fafc;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            border: 1px solid #334155;
+            transition: all 0.2s ease;
+        }
+
+        .link-btn:hover {
+            background-color: #334155;
+            border-color: #38bdf8;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Tvůj profilový obrázek z GitHubu -->
+        <img class="profile-img" src="https://github.com/anton1n-c0de.png" alt="Profilové foto">
+        
+        <h1>anton1n-c0de</h1>
+        <p>Můj osobní rozcestník</p>
+
+        <div class="links">
+            <a href="https://github.com/anton1n-c0de" class="link-btn" target="_blank">GitHub</a>
+            <a href="https://instagram.com" class="link-btn" target="_blank">Instagram</a>
+            <a href="mailto:email@example.com" class="link-btn">Napiš mi e-mail</a>
+        </div>
+    </div>
+
+</body>
+</html>
